@@ -1,6 +1,6 @@
 const cells = document.querySelectorAll('[data-cell]');
 const restartButton = document.getElementById('restart');
-let currentPlayer = 'X';
+let currentPlayer = 'H';  // Changed 'X' to 'H'
 
 function handleClick(e) {
   const cell = e.target;
@@ -21,7 +21,7 @@ function handleClick(e) {
     }, 100);
     return;
   }
-  currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+  currentPlayer = currentPlayer === 'H' ? 'I' : 'H';  // Changed 'X' to 'H' and 'O' to 'T'
 }
 
 function checkWin(player) {
@@ -46,7 +46,7 @@ function isBoardFull() {
 }
 
 function resetGame() {
-  currentPlayer = 'X';
+  currentPlayer = 'H';  // Changed 'X' to 'H'
   cells.forEach((cell) => {
     cell.textContent = '';
     cell.removeAttribute('data-mark');
